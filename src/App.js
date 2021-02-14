@@ -2,21 +2,29 @@ import './App.css';
 import hiraganaArray from './hiraganaArray';
 import { React, useState, useEffect, useRef } from 'react';
 
-const randomKana = () => hiraganaArray[Math.floor(Math.random() * hiraganaArray.length)];
+const randomKana = () => {
+  const entries = Object.entries(hiraganaArray);
+  const result = entries[Math.floor(Math.random() * entries.length)];
+  return result;
+};
 
 const App = () => {
   const [kana, setKana] = useState(randomKana);
   const [input, setInput] = useState('');
-  const [style, setStyle] = useState({ borderColor: '#fff' });
+  const [prevKana, setPrevKana] = useState('');
+  const [score, setScore] = useState(0);
 
   const validadeAnswer = () => {
-    if (input === kana.slice(2).trim()) {
+    if (input.toLowerCase().trim() === kana[1]) {
       console.log('top');
-      setStyle({ borderColor: '#fff' });
+      setPrevKana(kana);
       setKana(randomKana);
+      setScore(score + 1);
     } else {
-      setStyle({ borderColor: 'red' });
       console.log('nope');
+      setPrevKana(kana);
+      setKana(randomKana);
+      setScore(score < 1 ? score === 0 : score - 1);
     }
   };
 
@@ -32,13 +40,22 @@ const App = () => {
     e.target.reset();
   };
 
+  const disableSpace = (e) => {
+    if (e.key === ' ') {
+      e.preventDefault();
+    }
+  };
+
+  console.log(score);
+
   return (
     <div className='App'>
-      {kana.slice(0, 1)}
+      {kana[0]}
       <form onSubmit={handleSubmit}>
-        <input type='text' onChange={(e) => setInput(e.target.value)} ref={inputRef} style={style} />
+        <input onKeyPress={disableSpace} type='text' onChange={(e) => setInput(e.target.value)} ref={inputRef} />
         <button type='submit'>Go!</button>
       </form>
+      {prevKana !== '' ? `${prevKana[0]} = ${prevKana[1]}` : ''}
     </div>
   );
 };
