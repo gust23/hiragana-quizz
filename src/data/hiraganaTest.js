@@ -1,0 +1,32 @@
+const kanaDictionary = {
+  hiragana: {
+    h_group1: { characters: { あ: ['a'], い: ['i'], う: ['u'], え: ['e'], お: ['o'] } },
+    h_group2: { characters: { か: ['ka'], き: ['ki'], く: ['ku'], け: ['ke'], こ: ['ko'] } },
+    h_group3: { characters: { さ: ['sa'], し: ['shi', 'si'], す: ['su'], せ: ['se'], そ: ['so'] } },
+    h_group4: { characters: { た: ['ta'], ち: ['chi', 'ti'], つ: ['tsu', 'tu'], て: ['te'], と: ['to'] } },
+    h_group5: { characters: { な: ['na'], に: ['ni'], ぬ: ['nu'], ね: ['ne'], の: ['no'] } },
+    h_group6: { characters: { は: ['ha'], ひ: ['hi'], ふ: ['fu', 'hu'], へ: ['he'], ほ: ['ho'] } },
+    h_group7: { characters: { ま: ['ma'], み: ['mi'], む: ['mu'], め: ['me'], も: ['mo'] } },
+    h_group8: { characters: { や: ['ya'], ゆ: ['yu'], よ: ['yo'] } },
+    h_group9: { characters: { ら: ['ra'], り: ['ri'], る: ['ru'], れ: ['re'], ろ: ['ro'] } },
+    h_group10: { characters: { わ: ['wa'], を: ['wo', 'o'], ん: ['n'] } },
+    h_group11_a: { characters: { が: ['ga'], ぎ: ['gi'], ぐ: ['gu'], げ: ['ge'], ご: ['go'] } },
+    h_group12_a: { characters: { ざ: ['za'], じ: ['ji', 'zi'], ず: ['zu', 'du'], ぜ: ['ze'], ぞ: ['zo'] } },
+    h_group13_a: { characters: { だ: ['da'], ぢ: ['ji', 'di', 'dzi'], づ: ['zu', 'dzu'], で: ['de'], ど: ['do'] } },
+    h_group14_a: { characters: { ば: ['ba'], び: ['bi'], ぶ: ['bu'], べ: ['be'], ぼ: ['bo'] } },
+    h_group15_a: { characters: { ぱ: ['pa'], ぴ: ['pi'], ぷ: ['pu'], ぺ: ['pe'], ぽ: ['po'] } },
+    h_group16_a: { characters: { きゃ: ['kya'], きゅ: ['kyu'], きょ: ['kyo'] } },
+    h_group17_a: { characters: { しゃ: ['sha', 'sya'], しゅ: ['shu', 'syu'], しょ: ['sho', 'syo'] } },
+    h_group18_a: { characters: { ちゃ: ['cha', 'cya', 'tya'], ちゅ: ['chu', 'cyu'], ちょ: ['cho', 'cyo'] } },
+    h_group19_a: { characters: { にゃ: ['nya'], にゅ: ['nyu'], にょ: ['nyo'] } },
+    h_group20_a: { characters: { ひゃ: ['hya'], ひゅ: ['hyu'], ひょ: ['hyo'] } },
+    h_group21_a: { characters: { みゃ: ['mya'], みゅ: ['myu'], みょ: ['myo'] } },
+    h_group22_a: { characters: { りゃ: ['rya'], りゅ: ['ryu'], りょ: ['ryo'] } },
+    h_group23_a: { characters: { ぎゃ: ['gya'], ぎゅ: ['gyu'], ぎょ: ['gyo'] } },
+    h_group24_a: { characters: { じゃ: ['ja', 'jya'], じゅ: ['ju', 'jyu'], じょ: ['jo', 'jyo'] } },
+    h_group25_a: { characters: { びゃ: ['bya'], びゅ: ['byu'], びょ: ['byo'] } },
+    h_group26_a: { characters: { ぴゃ: ['pya'], ぴゅ: ['pyu'], ぴょ: ['pyo'] } },
+  },
+};
+
+export default kanaDictionary;

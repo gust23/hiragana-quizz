@@ -1,10 +1,6 @@
 const hiraganaArray = {
-  hgroup_1: { あ: 'a', い: 'i', う: 'u', え: 'e', お: 'o' },
-  か: 'ka',
-  き: 'ki',
-  く: 'ku',
-  け: 'ke',
-  こ: 'ko',
+  h_group1: { あ: 'a', い: 'i', う: 'u', え: 'e', お: 'o' },
+  h_group2: { か: 'ka', き: 'ki', く: 'ku', け: 'ke', こ: 'ko' },
   さ: 'sa',
   し: 'shi',
   す: 'su',
