@@ -1,15 +1,19 @@
 import './App.css';
-import hiraganaArray from '../data/hiraganaArray';
 import { React, useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
-const randomKana = () => {
-  const entries = Object.entries(hiraganaArray);
-  const result = entries[Math.floor(Math.random() * entries.length)];
-  return result;
-};
+const Game = (props) => {
+  const kanaGroup = props.location.kanaGroup || {};
 
-const Game = () => {
+  const randomKana = () => {
+    const randomObjKey = Math.floor(Math.random() * Object.entries(kanaGroup).length);
+    const randomGroup = Object.entries(kanaGroup)[randomObjKey][1];
+    const randomGroupArr = Object.entries(randomGroup);
+    const result = randomGroupArr[Math.floor(Math.random() * randomGroupArr.length)];
+    return result;
+  };
+
   const [kana, setKana] = useState(randomKana);
   const [input, setInput] = useState('');
   const [prevKana, setPrevKana] = useState('');
@@ -47,16 +51,20 @@ const Game = () => {
     }
   };
 
-  console.log(score);
+  // console.log(score);
 
   return (
     <div className='App'>
       {kana[0]}
       <form onSubmit={handleSubmit}>
         <input onKeyPress={disableSpace} type='text' onChange={(e) => setInput(e.target.value)} ref={inputRef} />
-        <button type='submit'>Go!</button>
+        <button disabled={!input} type='submit'>
+          Go!
+        </button>
       </form>
       {prevKana !== '' ? `${prevKana[0]} = ${prevKana[1]}` : ''}
+      <br />
+      <Link to={{ pathname: '/' }}>{<Button>Back</Button>}</Link>
     </div>
   );
 };
