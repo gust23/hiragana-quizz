@@ -64,7 +64,13 @@ const Game = (props) => {
       </form>
       {prevKana !== '' ? `${prevKana[0]} = ${prevKana[1]}` : ''}
       <br />
-      <Link to={{ pathname: '/' }}>{<Button>Back</Button>}</Link>
+      <Link to={{ pathname: '/' }}>
+        {
+          <Button variant='contained' color='primary'>
+            Back
+          </Button>
+        }
+      </Link>
     </div>
   );
 };
