@@ -38,6 +38,7 @@ input[type='checkbox']:hover {
   cursor: pointer;
   padding: 10px;
 }
+
 label:hover {
   cursor: pointer;
 }
@@ -52,4 +53,21 @@ span {
 
 .link {
   text-align: center;
+}
+
+/* =========================== */
+
+.home {
+  display: flex;
+}
+
+.alphabet {
+  flex: 1 1;
+}
+
+.alphabet .alphabet-title {
+  font-weight: bold;
+  margin: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ddd;
 }
