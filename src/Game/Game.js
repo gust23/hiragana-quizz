@@ -1,7 +1,7 @@
-import './App.css';
 import { React, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import './App.css';
 
 const Game = (props) => {
   const kanaGroup = props.location.kanaGroup || {};
@@ -19,17 +19,34 @@ const Game = (props) => {
   const [prevKana, setPrevKana] = useState('');
   const [score, setScore] = useState(0);
 
+  console.log(kana[1].toString().replace(/,/g, ' '));
+
   const validadeAnswer = () => {
-    if (input.toLowerCase().trim() === kana[1]) {
-      console.log('top');
-      setPrevKana(kana);
-      setKana(randomKana);
-      setScore(score + 1);
-    } else {
-      console.log('nope');
-      setPrevKana(kana);
-      setKana(randomKana);
-      setScore(score < 1 ? score === 0 : score - 1);
+    if (kana[1].length > 1) {
+      if (kana[1].toString().replace(/,/g, ' ').match(input.toLowerCase().trim())) {
+        console.log('top');
+        setPrevKana(kana);
+        setKana(randomKana);
+        setScore(score + 1);
+      } else {
+        console.log('nope');
+        setPrevKana(kana);
+        setKana(randomKana);
+        setScore(score < 1 ? score === 0 : score - 1);
+      }
+    }
+    if (kana[1].length < 1) {
+      if (input.toLowerCase().trim() === kana[1].toString()) {
+        console.log('top');
+        setPrevKana(kana);
+        setKana(randomKana);
+        setScore(score + 1);
+      } else {
+        console.log('nope');
+        setPrevKana(kana);
+        setKana(randomKana);
+        setScore(score < 1 ? score === 0 : score - 1);
+      }
     }
   };
 
@@ -51,18 +68,28 @@ const Game = (props) => {
     }
   };
 
+  useEffect(() => {
+    setInput('');
+  }, [kana]);
+
   // console.log(score);
 
   return (
     <div className='App'>
-      {kana[0]}
+      <span className='kana'>{kana[0]}</span>
       <form onSubmit={handleSubmit}>
-        <input onKeyPress={disableSpace} type='text' onChange={(e) => setInput(e.target.value)} ref={inputRef} />
+        <input
+          value={input}
+          onKeyPress={disableSpace}
+          type='text'
+          onChange={(e) => setInput(e.target.value)}
+          ref={inputRef}
+        />
         <button disabled={!input} type='submit'>
           Go!
         </button>
       </form>
-      {prevKana !== '' ? `${prevKana[0]} = ${prevKana[1]}` : ''}
+      <span className='kana'>{prevKana !== '' ? `${prevKana[0]} = ${prevKana[1]}` : ''}</span>
       <br />
       <Link to={{ pathname: '/' }}>
         {

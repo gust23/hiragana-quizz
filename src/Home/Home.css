@@ -7,14 +7,31 @@ body {
   font-family: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   min-height: 100vh;
   margin: 0;
+  flex-direction: row;
+}
+
+.container {
+  width: 1000px;
+}
+
+.kanatable {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .hiragana {
   text-align: left;
   padding: 10px;
+  max-width: 50%;
+}
+
+.katakana {
+  text-align: left;
+  padding: 10px;
+  max-width: 50%;
 }
 
 input[type='checkbox']:hover {
@@ -23,4 +40,16 @@ input[type='checkbox']:hover {
 }
 label:hover {
   cursor: pointer;
+}
+
+h2 {
+  margin-bottom: -5px;
+}
+
+span {
+  padding: 5px;
+}
+
+.link {
+  text-align: center;
 }
