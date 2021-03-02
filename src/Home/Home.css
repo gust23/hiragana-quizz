@@ -59,6 +59,12 @@ span {
 
 .home {
   display: flex;
+  flex-direction: column;
+}
+
+.home .home-alphabets {
+  display: flex;
+  margin: 12px;
 }
 
 .alphabet {
