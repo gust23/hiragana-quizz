@@ -1,11 +1,9 @@
 import { React } from 'react';
 import { connect } from 'react-redux';
 import { AlphabetChecks } from './alphabet-check';
-import { updateCheck } from './actions'
+import { updateCheck } from './actions';
 
-const CheckContainer = (props) => (
-  <AlphabetChecks {...props} />
-);
+const CheckContainer = (props) => <AlphabetChecks {...props} />;
 
 const mapStateToProps = ({ alphabet }, { alphabetType }) => ({
   checks: alphabet[alphabetType],
