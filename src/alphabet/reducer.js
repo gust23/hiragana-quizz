@@ -1,8 +1,11 @@
 import { UPDATE_CHECK } from './actions';
+import { hiragana as hiraKana, katakana as kataKana } from '../data/languages';
 
 const initialState = {
   hiragana: {},
   katakana: {},
+  hiraKana,
+  kataKana,
 };
 
 export default function (state = initialState, action) {

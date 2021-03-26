@@ -14,8 +14,13 @@ const getLocationParams = ({ search, state }) => {
   return { katakana, hiragana };
 };
 
-const Game = (props) => {
+const Game = ({ alphabet, aa }) => {
+  useEffect(() => {
+    aa();
+  }, []);
+
   const location = useLocation();
+  console.log(alphabet);
   const { katakana, hiragana } = getLocationParams(location);
   console.log(katakana, hiragana);
 

@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 
 const redirectWithParams = (history, katakana, hiragana) => {
-  console.warn(katakana, hiragana);
   const hiraganaParams = Object.keys(hiragana);
   const katakanaParams = Object.keys(katakana);
 

@@ -1,10 +1,8 @@
 import { React } from 'react';
 import { connect } from 'react-redux';
-import Button from './button';
+import PlayButton from './button';
 
-const ButtonContainer = (props) => (
-  <Button {...props} />
-);
+const ButtonContainer = (props) => <PlayButton {...props} />;
 
 const mapStateToProps = (state) => state.alphabet;
 

@@ -4,8 +4,8 @@ import _ from 'lodash';
 const GroupCheck = ({ groupId, group, checked, OnChange }) => (
   <div>
     <input type='checkbox' value={checked} onChange={() => OnChange(!checked)} />
-    {group.map(({ romanji }) => (
-      <span>{romanji.length > 1 ? romanji[0] : romanji}</span>
+    {group.map(({ romanji, kana, groupId }) => (
+      <span key={kana}>{romanji.length > 1 ? romanji[0] : romanji}</span>
     ))}
     {/* <div>kana: {kana}</div>
     <div>romanji: {
